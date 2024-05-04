@@ -1,0 +1,10 @@
+/* Background Flag */
+
+body {
+    background-image: url("https://th.bing.com/th/id/OIP.pH-XkdBFODREiU-6P17DzgHaFj?rs=1&pid=ImgDetMain");
+    background-size: 100vw 100vh;
+    background-color: #cccccc;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
