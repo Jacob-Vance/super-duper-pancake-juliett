@@ -14,11 +14,9 @@ function convertToNATO() {
     const inputText = document.getElementById('input-text').value.toUpperCase(); // Get input text and convert to uppercase
     let outputText = '';
 
-    // Iterate over each character in input text
     for (let i = 0; i < inputText.length; i++) {
         const char = inputText[i];
 
-        // Check if character is a letter or number
         if (/[A-Z,1,2,3,4,5,6,7,8,9,0]/.test(char)) {
             // Append the formatted output for the character
             outputText += `${char} = ${natoAlphabet[char] || 'Unknown'}\n`;
@@ -28,7 +26,6 @@ function convertToNATO() {
         }
     }
 
-    // Set output text to the output text input field
     document.getElementById('output-text').value = outputText.trim(); // Trim to remove trailing newline
 }
 
@@ -38,27 +35,19 @@ function clearOutput() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Find the form element by its ID
     const form = document.getElementById('conversion-form');
 
-    // Add event listener for form submission
     form.addEventListener('submit', function(event) {
-        // Prevent default form submission behavior
         event.preventDefault();
-        
-        // Call the convertToNATO function when the form is submitted (either by button click or Enter key press)
+    
         convertToNATO();
     });
 
-    // Optionally, you can also listen for key presses in the input field
     const inputField = document.getElementById('input-text');
     inputField.addEventListener('keypress', function(event) {
-        // Check if the pressed key is Enter (key code 13)
         if (event.key === 'Enter') {
-            // Prevent the default form submission behavior
             event.preventDefault();
             
-            // Call the convertToNATO function
             convertToNATO();
         }
     });
